@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import '../login_page.dart';
-import 'pay_bills_splash.dart';
 
-class AcceptPaymentsSplash extends StatelessWidget {
-  const AcceptPaymentsSplash({Key? key}) : super(key: key);
+class PayBillsSplash extends StatelessWidget {
+  const PayBillsSplash({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,7 @@ class AcceptPaymentsSplash extends StatelessWidget {
           child: Column(
             children: [
               const Spacer(),
-              // Accept Payments Icon
+              // Pay Bills Icon
               Container(
                 width: 120,
                 height: 120,
@@ -41,7 +40,7 @@ class AcceptPaymentsSplash extends StatelessWidget {
                   borderRadius: BorderRadius.circular(60),
                 ),
                 child: const Icon(
-                  Icons.account_balance_wallet_rounded,
+                  Icons.receipt_long,
                   size: 48,
                   color: Color(0xFF18534F),
                 ),
@@ -49,7 +48,7 @@ class AcceptPaymentsSplash extends StatelessWidget {
               const SizedBox(height: 32),
               // Title
               const Text(
-                'Accept Payments',
+                'Pay Bills',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
@@ -58,7 +57,7 @@ class AcceptPaymentsSplash extends StatelessWidget {
               const SizedBox(height: 16),
               // Description
               const Text(
-                'Accept stablecoin payments hassle-free',
+                'Pay for utility services and earn rewards',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16,
@@ -80,15 +79,6 @@ class AcceptPaymentsSplash extends StatelessWidget {
                   ),
                   const SizedBox(width: 8),
                   Container(
-                    width: 24,
-                    height: 8,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF18534F),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Container(
                     width: 8,
                     height: 8,
                     decoration: BoxDecoration(
@@ -96,10 +86,19 @@ class AcceptPaymentsSplash extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                     ),
                   ),
+                  const SizedBox(width: 8),
+                  Container(
+                    width: 24,
+                    height: 8,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF18534F),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                  ),
                 ],
               ),
               const SizedBox(height: 32),
-              // Next Button
+              // Get Started Button
               SizedBox(
                 width: double.infinity,
                 height: 50,
@@ -112,11 +111,11 @@ class AcceptPaymentsSplash extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => const PayBillsSplash()),
+                      MaterialPageRoute(builder: (context) => const LoginPage()),
                     );
                   },
                   child: const Text(
-                    'Next',
+                    'Get Started',
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ),
