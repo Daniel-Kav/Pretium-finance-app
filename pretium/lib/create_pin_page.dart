@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 
 class CreatePinPage extends StatefulWidget {
   const CreatePinPage({super.key});
@@ -27,6 +28,11 @@ class _CreatePinPageState extends State<CreatePinPage> {
                 duration: Duration(seconds: 2),
               ),
             );
+            Future.delayed(const Duration(milliseconds: 1200), () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => const HomePage()),
+              );
+            });
           });
         }
       }
