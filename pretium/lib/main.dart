@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
+import 'Splash/direct_pay_splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Pretium',
       theme: ThemeData(
-        //
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primaryColor: const Color(0xFF18534F),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF18534F)),
       ),
-      home: const LoginPage(),
+      home: const DirectPaySplash(),
     );
   }
 }
