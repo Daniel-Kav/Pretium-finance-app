@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'create_pin_page.dart';
 
 class VerifyAccountPage extends StatefulWidget {
   const VerifyAccountPage({super.key});
@@ -92,7 +93,11 @@ class _VerifyAccountPageState extends State<VerifyAccountPage> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const CreatePinPage()),
+                    );
+                  },
                   child: const Text('Verify Account', style: TextStyle(fontSize: 18)),
                 ),
               ),
