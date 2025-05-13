@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'verify_account_page.dart';
 
 
 class SignupPage extends StatefulWidget {
@@ -190,7 +191,9 @@ class _SignupPageState extends State<SignupPage> {
                   height: 56,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Handle create account
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => const VerifyAccountPage()),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF1D6B5B),
