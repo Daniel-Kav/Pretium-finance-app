@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'signup_page.dart';
+import 'login_pin_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF18534F),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -36,20 +38,28 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 32),
                 const Text(
                   'Welcome Back!',
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 const SizedBox(height: 8),
                 const Text(
                   'Sign in to continue',
-                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                  style: TextStyle(fontSize: 16, color: Colors.white70),
                 ),
                 const SizedBox(height: 32),
                 TextField(
                   controller: _emailController,
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.email_outlined, color: Color(0xFF18534F)),
+                    prefixIcon: Icon(Icons.email_outlined, color: Colors.white),
                     labelText: 'Email',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                    labelStyle: TextStyle(color: Colors.white70),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.white54),
+                    ),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
@@ -58,9 +68,17 @@ class _LoginPageState extends State<LoginPage> {
                   controller: _passwordController,
                   obscureText: _obscurePassword,
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.lock_outline, color: Color(0xFF18534F)),
+                    prefixIcon: Icon(Icons.lock_outline, color: Colors.white),
                     labelText: 'Password',
-                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+                    labelStyle: TextStyle(color: Colors.white70),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(color: Colors.white54),
+                    ),
                     suffixIcon: IconButton(
                       icon: Icon(_obscurePassword ? Icons.visibility_off : Icons.visibility),
                       onPressed: () {
@@ -82,11 +100,11 @@ class _LoginPageState extends State<LoginPage> {
                         });
                       },
                     ),
-                    const Text('Remember me'),
+                    const Text('Remember me', style: TextStyle(color: Colors.white70)),
                     const Spacer(),
                     TextButton(
                       onPressed: () {},
-                      child: const Text('Forgot Password?', style: TextStyle(color: Color(0xFF18534F))),
+                      child: const Text('Forgot Password?', style: TextStyle(color: Colors.white)),
                     ),
                   ],
                 ),
@@ -101,7 +119,11 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => const LoginPinPage()),
+                      );
+                    },
                     child: const Text('Login', style: TextStyle(fontSize: 18)),
                   ),
                 ),
@@ -109,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don't have an account? "),
+                    const Text("Don't have an account? ", style: TextStyle(color: Colors.white70)),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -119,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: const Text(
                         'Sign Up',
                         style: TextStyle(
-                          color: Color(0xFF18534F),
+                          color: Colors.white,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -134,4 +156,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-} 
+}
