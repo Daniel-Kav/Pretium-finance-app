@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,9 +14,16 @@ class HomePage extends StatelessWidget {
         automaticallyImplyLeading: false,
         title: Row(
           children: [
-            CircleAvatar(
-              backgroundColor: Colors.white,
-              child: Text('D', style: TextStyle(color: Color(0xFF18534F), fontWeight: FontWeight.bold)),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const ProfilePage()),
+                );
+              },
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Text('D', style: TextStyle(color: Color(0xFF18534F), fontWeight: FontWeight.bold)),
+              ),
             ),
             const SizedBox(width: 16),
             const Expanded(
