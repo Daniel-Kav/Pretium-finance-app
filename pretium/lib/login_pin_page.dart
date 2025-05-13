@@ -68,7 +68,7 @@ class _LoginPinPageState extends State<LoginPinPage> {
       onTap: onTap ?? () => _addDigit(value),
       child: Container(
         width: 80,
-        height: 8,
+        height: 80,
         margin: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
@@ -101,7 +101,7 @@ class _LoginPinPageState extends State<LoginPinPage> {
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             children: [
-              const SizedBox(height: 60),
+              const SizedBox(height: 100),
               const Text(
                 'Hello, Daniel 👋',
                 style: TextStyle(

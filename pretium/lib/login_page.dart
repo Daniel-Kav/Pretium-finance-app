@@ -18,7 +18,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF18534F),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -38,28 +37,20 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 32),
                 const Text(
                   'Welcome Back!',
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white),
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
                 const Text(
                   'Sign in to continue',
-                  style: TextStyle(fontSize: 16, color: Colors.white70),
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
                 ),
                 const SizedBox(height: 32),
                 TextField(
                   controller: _emailController,
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.email_outlined, color: Colors.white),
+                    prefixIcon: Icon(Icons.email_outlined, color: Color(0xFF18534F)),
                     labelText: 'Email',
-                    labelStyle: TextStyle(color: Colors.white70),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.white54),
-                    ),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
@@ -68,17 +59,9 @@ class _LoginPageState extends State<LoginPage> {
                   controller: _passwordController,
                   obscureText: _obscurePassword,
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.lock_outline, color: Colors.white),
+                    prefixIcon: Icon(Icons.lock_outline, color: Color(0xFF18534F)),
                     labelText: 'Password',
-                    labelStyle: TextStyle(color: Colors.white70),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(color: Colors.white54),
-                    ),
+                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
                     suffixIcon: IconButton(
                       icon: Icon(_obscurePassword ? Icons.visibility_off : Icons.visibility),
                       onPressed: () {
@@ -100,11 +83,11 @@ class _LoginPageState extends State<LoginPage> {
                         });
                       },
                     ),
-                    const Text('Remember me', style: TextStyle(color: Colors.white70)),
+                    const Text('Remember me'),
                     const Spacer(),
                     TextButton(
                       onPressed: () {},
-                      child: const Text('Forgot Password?', style: TextStyle(color: Colors.white)),
+                      child: const Text('Forgot Password?', style: TextStyle(color: Color(0xFF18534F))),
                     ),
                   ],
                 ),
@@ -124,14 +107,14 @@ class _LoginPageState extends State<LoginPage> {
                         MaterialPageRoute(builder: (context) => const LoginPinPage()),
                       );
                     },
-                    child: const Text('Login', style: TextStyle(fontSize: 18)),
+                    child: const Text('Login', style: TextStyle(fontSize: 18, color: Colors.white)),
                   ),
                 ),
                 const SizedBox(height: 32),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Don't have an account? ", style: TextStyle(color: Colors.white70)),
+                    const Text("Don't have an account? "),
                     GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -141,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: const Text(
                         'Sign Up',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Color(0xFF18534F),
                           fontWeight: FontWeight.bold,
                         ),
                       ),

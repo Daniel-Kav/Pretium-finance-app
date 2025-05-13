@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'verify_account_page.dart';
+import 'login_page.dart';
 
 
 class SignupPage extends StatefulWidget {
@@ -222,7 +223,9 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     TextButton(
                       onPressed: () {
-                        // Handle login
+                        Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => const LoginPage()),
+                        );
                       },
                       child: const Text(
                         'Login',
